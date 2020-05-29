@@ -4,6 +4,7 @@
   flex-direction: row;
   position: absolute;
   visibility: hidden;
+
   .menu-brand,
   .menu-items {
     display: flex;
@@ -12,14 +13,48 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgba(102, 119, 136, 0.308);
+    background-color: rgba(45, 45, 46, 0.74);
   }
   .menu-brand {
+    transform: translate3d(0, 100%, 0);
+    @include easeout;
     img {
       max-width: 200px;
       height: auto;
       border-radius: 50%;
       border: 2px solid $secondary;
+    }
+  }
+  .menu-items {
+    transform: translate3d(0, -100%, 0);
+    @include easeout;
+    .menu-item {
+      font-size: 30px;
+      transform: translate3d(10%, 0%, 0);
+      @include easeout;
+      &.active {
+        color: $secondary;
+      }
+    }
+  }
+  &.show {
+    visibility: visible;
+    .menu-brand {
+      &.show {
+        transform: translate3d(0, 0%, 0);
+        @include easeout;
+      }
+    }
+    .menu-items {
+      &.show {
+        transform: translate3d(0, 0%, 0);
+        @include easeout;
+
+        .menu-item {
+          transform: translate3d(-10%, 0%, 0);
+          @include easeout;
+        }
+      }
     }
   }
 }
