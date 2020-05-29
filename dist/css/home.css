@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   position: absolute;
+  visibility: hidden;
 }
 .menu .menu-brand,
 .menu .menu-items {
@@ -55,6 +56,19 @@ body .nav-btn .btn-line {
   height: 2.4px;
   background-color: white;
   margin: 0 0 4px 0;
+  transition: all 1s ease-out;
+}
+body .nav-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px);
+  transition: all 1s ease-out;
+}
+body .nav-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+body .nav-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px);
+  transition: all 1s ease-out;
 }
 body .main {
   margin-top: 20vh;
