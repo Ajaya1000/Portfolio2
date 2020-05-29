@@ -12,7 +12,7 @@ ul {
 body {
   background: $primary;
   color: $txtc;
-  overflow: hidden;
+  // overflow: hidden;
 
   .nav-btn {
     z-index: 3;
@@ -30,9 +30,25 @@ body {
       margin: 0 0 4px 0;
     }
   }
+  .menu {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    visibility: hidden;
+    .menu-brand,
+    .menu-items {
+      display: flex;
+      flex-flow: column wrap;
+      width: 50vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(102, 119, 136, 0);
+    }
+  }
 
   .main {
-    z-index: -1;
     margin-top: 20%;
     margin-left: 10%;
     position: absolute;
