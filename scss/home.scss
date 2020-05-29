@@ -6,22 +6,54 @@ a {
   text-decoration: none;
   color: $txtc;
 }
+ul {
+  list-style: none;
+}
 body {
   background: $primary;
   color: $txtc;
+  overflow: hidden;
 
-  .header {
-    .nav-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      padding: 3px;
-      z-index: 3;
-      .btn-line {
-        width: 28px;
-        height: 2.4px;
-        background-color: $txtc;
-        margin: 0 0 4px 0;
+  .nav-btn {
+    z-index: 3;
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+    padding: 3px;
+
+    cursor: pointer;
+    .btn-line {
+      width: 28px;
+      height: 2.4px;
+      background-color: $txtc;
+      margin: 0 0 4px 0;
+    }
+  }
+
+  .main {
+    z-index: -1;
+    margin-top: 20%;
+    margin-left: 10%;
+    position: absolute;
+    .title {
+      font-size: 4rem;
+
+      .sub-title {
+        color: $secondary;
+        padding: 3px;
+        background-color: opacify($color: $primary, $amount: 0.9);
+      }
+    }
+
+    .social-menu {
+      a {
+        margin-right: 0.5rem;
+
+        &:hover {
+          color: $secondary;
+          @include easeout;
+        }
       }
     }
   }
