@@ -1,0 +1,9 @@
+$primary: rgb(48, 47, 47);
+$secondary: rgb(252, 249, 96);
+$txtc: rgb(255, 255, 255);
+@if lightness($primary) >40 {
+  $textc: rgb(66, 64, 64);
+}
+@mixin easeout {
+  transition: all 1s ease-out;
+}
