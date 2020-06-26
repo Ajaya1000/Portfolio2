@@ -1,0 +1,72 @@
+@import "main";
+$cardcolor: rgb(29, 44, 43);
+body {
+  overflow-y: auto;
+  .header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 3rem;
+    background-color: rgba(#333, 0.5);
+    .header-title {
+      font-size: 3rem;
+      font-weight: 900;
+      font-family: emoji, cursive, Impact, Haettenschweiler, "Arial Narrow Bold",
+        sans-serif;
+      color: $secondary;
+    }
+    &-content {
+      font-weight: 500;
+      text-indent: 2rem;
+      font-size: 1.4rem;
+    }
+  }
+  .project-menu {
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      // &:nth-child(even) {
+      //   grid-template-columns: "DescArea DescArea DescArea DescArea CardArea";
+      // }
+      @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+      }
+      width: 100vw;
+      justify-content: center;
+      align-items: center;
+      .project-card {
+        transition: 0.3s;
+        width: auto;
+        margin: 4rem;
+        padding: 1rem;
+        box-shadow: 10px 0px 30px 30px rgba(47, 49, 49, 0.795);
+        color: $txtc;
+        &:hover {
+          box-shadow: 10px 0px 30px 30px rgba(47, 49, 49, 0.795),
+            10px 0px 30px 10px rgba(143, 145, 40, 0.527);
+        }
+        .project-title {
+          font-size: 1.8rem;
+          font-style: oblique;
+          font-weight: 700;
+        }
+        .project-img {
+          width: fit-content;
+          img {
+            max-width: 180px;
+            height: auto;
+          }
+        }
+        .project-context {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+      }
+      .project-description {
+        padding: 30px;
+        color: $txtc;
+        // grid-area: DescArea;
+      }
+    }
+  }
+}
